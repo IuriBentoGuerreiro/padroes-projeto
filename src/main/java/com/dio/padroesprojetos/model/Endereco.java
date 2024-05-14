@@ -2,6 +2,7 @@ package com.dio.padroesprojetos.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
@@ -9,6 +10,7 @@ import lombok.Data;
 public class Endereco {
 
     @Id
+    @Pattern(regexp = "\\d{5}-\\d{3}", message = "CEP deve estar no formato XXXXX-XXX")
     private String cep;
     private String logradouro;
     private String complemento;
